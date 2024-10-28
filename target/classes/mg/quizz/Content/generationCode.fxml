@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.quizz.admin.GenerationCodeController">
+    <children>
+        <Label layoutX="50.0" layoutY="50.0" text="Sélectionner un utilisateur :" />
+        <ComboBox fx:id="userComboBox" layoutX="250.0" layoutY="45.0" prefWidth="200.0" />
+
+        <!-- Bouton pour générer le code -->
+        <Button fx:id="generateCodeButton" layoutX="250.0" layoutY="100.0" mnemonicParsing="false" text="Générer le code" onAction="#handleGenerateCodeButton" />
+
+        <Label fx:id="generatedCodeLabel" layoutX="250.0" layoutY="150.0" text="Code généré : " />
+
+        <!-- Bouton pour copier le code généré -->
+        <Button fx:id="copyCodeButton" layoutX="250.0" layoutY="200.0" mnemonicParsing="false" text="Copier le code" onAction="#handleCopyCodeButton" />
+
+        <!-- Bouton pour réinitialiser tous les codes utilisateurs -->
+        <Button fx:id="resetCodesButton" layoutX="250.0" layoutY="250.0" mnemonicParsing="false" text="Réinitialiser tous les codes" onAction="#handleResetCodesButton" />
+        
+        <!-- Bouton pour réinitialiser le code d'un seul utilisateur -->
+        <Button fx:id="resetUserCodeButton" layoutX="250.0" layoutY="300.0" mnemonicParsing="false" text="Réinitialiser le code de l'utilisateur" onAction="#handleResetUserCodeButton" />
+    </children>
+</AnchorPane>

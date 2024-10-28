@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c85745ec-6331-42a0-9385-19b1f9510028" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/AppAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/ConnexionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/GestionMatiereController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/HomePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/QuizzController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/RegistrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/admin/WelcomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/user/RegistrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Admin/HomePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Admin/connexion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Admin/registration.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Admin/welcome.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Content/matiere.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/Content/quizz.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Admin/HomePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Admin/connexion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Admin/registration.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Admin/welcome.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Content/matiere.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/Content/quizz.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/AppAdmin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/ConnexionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/GestionMatiereController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/HomePageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/QuizzController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/RegistrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/admin/WelcomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/user/HomePageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mg/quizz/user/RegistrationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Img/connexion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Img/inscription.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mg/quizz/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/user/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mg/quizz/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/user/ConnexionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mg/quizz/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/user/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mg/quizz/RegistrationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mg/quizz/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mg/quizz/user/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mg/quizz/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/User/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mg/quizz/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/User/connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mg/quizz/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/User/registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mg/quizz/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/User/welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/user/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/ConnexionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/user/ConnexionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/User/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/HomePageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/RegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/user/WelcomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/User/connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mg/quizz/User/registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mg/quizz/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mg/quizz/User/welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2n7I4AQ54zZA2y5BlITyXivG59t" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c85745ec-6331-42a0-9385-19b1f9510028" name="Changes" comment="" />
+      <created>1728317504803</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728317504803</updated>
+    </task>
+    <servers />
+  </component>
+</project>

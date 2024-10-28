@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.quizz.admin.HomePageController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label layoutX="220.0" layoutY="50.0" text="Welcome to the Home Page" textAlignment="CENTER">
+               <font>
+                  <Font name="Quicksand Bold" size="32.0" />
+               </font>
+            </Label>
+            
+            <Button fx:id="logoutButton" layoutX="220.0" layoutY="200.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Logout" onAction="#handleLogoutButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+               </font>
+            </Button>
+
+            <!-- Bouton pour la gestion des matières -->
+            <Button fx:id="gestionMatiereButton" layoutX="220.0" layoutY="250.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Gestion Matières" onAction="#handleGestionMatiereButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+               </font>
+            </Button>
+
+            <!-- Nouveau bouton pour accéder au Quizz -->
+            <Button fx:id="quizzButton" layoutX="220.0" layoutY="300.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Accéder au Quizz" onAction="#handleQuizzButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+               </font>
+            </Button>
+
+            <!-- Nouveau bouton pour accéder à generationCode -->
+            <Button fx:id="generationCodeButton" layoutX="220.0" layoutY="350.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Générer un Code" onAction="#handleGenerationCodeButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+            </font>
+            </Button>
+
+            <!-- Nouveau bouton pour accéder à semestre -->
+            <Button fx:id="semestreButton" layoutX="220.0" layoutY="400.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Accéder au Semestre" onAction="#handleSemestreButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+               </font>
+            </Button>
+
+            <!-- Nouveau bouton pour accéder à resultat -->
+            <Button fx:id="resultatButton" layoutX="220.0" layoutY="450.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="160.0" text="Voir Résultats" onAction="#handleResultatButton">
+               <font>
+                  <Font name="Quicksand Bold" size="15.0" />
+               </font>
+            </Button>
+
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

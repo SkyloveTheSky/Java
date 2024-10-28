@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.quizz.admin.SemestreController" prefHeight="400.0" prefWidth="600.0">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" text="Gestion des Semestres" />
+      
+      <TextField fx:id="semestreField" layoutX="20.0" layoutY="60.0" promptText="Ajouter un semestre..." />
+      
+      <Button layoutX="200.0" layoutY="60.0" text="Ajouter" onAction="#handleAddSemestre" />
+      
+      <ListView fx:id="semestreListView" layoutX="20.0" layoutY="100.0" prefHeight="200.0" prefWidth="560.0" />
+
+      <Button layoutX="20.0" layoutY="320.0" text="Supprimer" onAction="#handleDeleteSemestre" />
+   </children>
+</AnchorPane>

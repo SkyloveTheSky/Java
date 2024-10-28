@@ -1,4 +1,10 @@
 {
-    "maven.view": "hierarchical",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "maven.view": "flat",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.project.referencedLibraries": [
+        "lib/jbcrypt-0.4.jar"
+    ],
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.explorer.showNonJavaResources": true
 }

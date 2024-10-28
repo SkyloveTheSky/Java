@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx/fxml/1" fx:controller="mg.quizz.admin.QuizzController">
+   <children>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Gérer les Quizz" style="-fx-font-size: 20px;" />
+            
+            <Label text="Sélectionner la Matière" />
+            <ComboBox fx:id="matiereComboBox" prefWidth="250.0" />
+
+            <Label text="Titre du Quizz" />
+            <TextField fx:id="titreQuizzField" prefWidth="250.0" />
+
+            <Label text="Note reçu(Vrai)" />
+            <Spinner fx:id="noteQuizzSpinner" />
+
+            <Label text="Réduction de la note(Faux)" />
+            <Spinner fx:id="noteReductionSpinner" />
+
+            <Label text="Date du Quizz" />
+            <DatePicker fx:id="dateQuizzPicker" prefWidth="250.0" />
+
+            <Label text="Ajouter une Question" />
+            <TextField fx:id="questionQuizzField" prefWidth="250.0" />
+
+            <Label text="Nombre d'options de réponses" />
+            <Spinner fx:id="nbrOptionsSpinner" prefWidth="100.0" />
+
+            <VBox fx:id="optionsContainer" spacing="5.0">
+               <children>
+                  <Label text="Entrez les options de réponse avec leurs cases à cocher pour les bonnes réponses:" />
+               </children>
+            </VBox>
+
+            <Label text="Liste des Quizz" />
+            <ListView fx:id="quizzListView" prefHeight="100.0" prefWidth="250.0" />
+
+            <HBox spacing="8.0">
+               <children>
+                  <Button text="Ajouter" onAction="#handleAjouterQuizz" />
+                  <Button text="Modifier" onAction="#handleModifierQuizz" />
+                  <Button text="Supprimer" onAction="#handleSupprimerQuizz" />
+               </children>
+            </HBox>
+
+            <Button text="Retour" onAction="#handleRetourHomePage" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+

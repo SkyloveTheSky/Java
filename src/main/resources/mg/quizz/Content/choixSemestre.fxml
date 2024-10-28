@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.quizz.user.ChoixSemestreController">
+    <children>
+        <VBox alignment="CENTER" spacing="10.0" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <children>
+                <Text text="Choisissez un Semestre" style="-fx-font-size: 18px;" />
+
+                <!-- Label qui sera affiché s'il n'y a pas de semestre -->
+                <Label fx:id="noSemestreLabel" text="Aucun semestre disponible" visible="false" style="-fx-text-fill: red;" />
+
+                <!-- VBox qui contiendra dynamiquement les boutons de semestre -->
+                <VBox fx:id="semestreContainer" spacing="10.0">
+                    <!-- Les boutons de semestre seront ajoutés ici dynamiquement -->
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

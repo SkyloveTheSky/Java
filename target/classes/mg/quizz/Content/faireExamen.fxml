@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.quizz.user.FaireExamenController">
+    <children>
+        <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" spacing="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+            <!-- Titre de la matière -->
+            <Label fx:id="matiereLabel" text="Matière : " style="-fx-font-size: 24px;" />
+
+            <!-- Label pour le chrono -->
+            <Label fx:id="timerLabel" text="00:00" style="-fx-font-size: 18px;"/>
+
+            <!-- Question du QCM -->
+            <Label fx:id="questionLabel" text="Question 1 : " style="-fx-font-size: 18px;" />
+
+            <!-- Conteneur pour afficher les options de réponse -->
+            <VBox fx:id="optionsContainer" spacing="10.0">
+                <!-- Les CheckBox pour les options seront générées dynamiquement dans le contrôleur -->
+            </VBox>
+
+            <!-- Boutons pour soumettre la réponse et passer à la question suivante -->
+            <HBox spacing="20.0">
+                <Button fx:id="submitButton" text="Soumettre la Réponse" onAction="#handleSubmitAnswerButton" />
+                <Button fx:id="nextQuestionButton" text="Question Suivante" onAction="#handleNextQuestionButton" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
