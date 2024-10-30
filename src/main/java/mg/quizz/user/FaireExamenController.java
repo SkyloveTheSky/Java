@@ -36,18 +36,17 @@ public class FaireExamenController {
     private Button nextQuestionButton;
 
     @FXML
-    private Label timerLabel; // Étiquette pour afficher le chrono
+    private Label timerLabel;
 
     private String selectedMatiere;
     private List<String> questionsList = new ArrayList<>();
     private List<List<String>> optionsList = new ArrayList<>();
     private List<String> correctAnswers = new ArrayList<>();
     private int currentQuestionIndex = 0;
-    private int chrono; // Temps total en secondes
+    private int chrono; 
     private Timeline timeline;
-    private int currentQuizzId; // Attribut pour stocker l'ID du quiz actuel
+    private int currentQuizzId;
 
-    // Attribut pour stocker l'utilisateur actuel
     private int userId;
 
     public void setUserId(int userId) {
@@ -63,7 +62,7 @@ public class FaireExamenController {
     }
 
     @FXML
-public void initialize() {
+    public void initialize() {
     if (userId == 0) {
         System.out.println("Erreur : User ID est 0 dans FaireExamen !");
     }
@@ -71,6 +70,7 @@ public void initialize() {
     // Initialiser le chrono
     timerLabel.setText("00:00");
 }
+    
     public void setSelectedMatiere(String matiere) {
         this.selectedMatiere = matiere;
         matiereLabel.setText("Matière : " + matiere);
@@ -245,112 +245,111 @@ public void initialize() {
 
     @FXML
     private void handleSubmitAnswerButton(ActionEvent event) {
-        // Vérification : S'assurer qu'une question a bien été sélectionnée
-        if (currentQuestionIndex >= questionsList.size()) {
-            System.out.println("Erreur : Aucune question active à soumettre.");
+    // Vérification : S'assurer qu'une question a bien été sélectionnée
+    if (currentQuestionIndex >= questionsList.size()) {
+        System.out.println("Erreur : Aucune question active à soumettre.");
+        return;
+    }
+
+    // Initialiser le score utilisateur pour cette soumission de question
+    int userScore = 0;
+
+    // Récupérer l'ID du quizz actuel
+    int quizzId = getCurrentQuizzId();
+
+    // Récupérer les notes pour les options sélectionnées depuis la base de données
+    try (Connection conn = DatabaseConnection.getConnection()) {
+        if (conn == null) {
+            System.out.println("Erreur : Impossible de se connecter à la base de données.");
             return;
         }
 
-        // Initialiser le score utilisateur
-        int userScore = 0;
+        // Requête pour récupérer les valeurs de note_is_correct et note_isnot_correct pour le quizz en cours
+        String query = "SELECT option_text, note_is_correct, note_isnot_correct, is_correct FROM options WHERE quizz_id = ?";
+        PreparedStatement pstmt = conn.prepareStatement(query);
+        pstmt.setInt(1, quizzId);
+        ResultSet rs = pstmt.executeQuery();
 
-        // Récupérer l'ID du quizz actuel
-        int quizzId = getCurrentQuizzId();
+        while (rs.next()) {
+            String optionText = rs.getString("option_text");
+            int noteCorrect = rs.getInt("note_is_correct");
+            int noteIncorrect = rs.getInt("note_isnot_correct");
+            boolean isCorrect = rs.getBoolean("is_correct");
 
-        // Récupérer les notes pour les options sélectionnées depuis la base de données
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            if (conn == null) {
-                System.out.println("Erreur : Impossible de se connecter à la base de données.");
-                return;
-            }
-
-            // Requête pour récupérer les valeurs de note_is_correct et note_isnot_correct pour le quizz en cours
-            String query = "SELECT option_text, note_is_correct, note_isnot_correct, is_correct FROM options WHERE quizz_id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, quizzId);
-            ResultSet rs = pstmt.executeQuery();
-
-            while (rs.next()) {
-                String optionText = rs.getString("option_text");
-                int noteCorrect = rs.getInt("note_is_correct");
-                int noteIncorrect = rs.getInt("note_isnot_correct");
-                boolean isCorrect = rs.getBoolean("is_correct");
-
-                // Parcourir les options sélectionnées dans l'interface pour vérifier si elles correspondent à cette option
-                for (Node node : optionsContainer.getChildren()) {
-                    if (node instanceof CheckBox) {
-                        CheckBox checkBox = (CheckBox) node;
-                        if (checkBox.isSelected() && checkBox.getText().equals(optionText)) {
-                            // Ajouter la note correcte ou incorrecte en fonction de la sélection
-                            if (isCorrect) {
-                                userScore += noteCorrect;
-                            } else {
-                                userScore += noteIncorrect;
-                            }
+            // Parcourir les options sélectionnées dans l'interface pour vérifier si elles correspondent à cette option
+            for (Node node : optionsContainer.getChildren()) {
+                if (node instanceof CheckBox) {
+                    CheckBox checkBox = (CheckBox) node;
+                    if (checkBox.isSelected() && checkBox.getText().equals(optionText)) {
+                        // Ajouter la note correcte ou incorrecte en fonction de la sélection
+                        if (isCorrect) {
+                            userScore += noteCorrect;
+                        } else {
+                            userScore += noteIncorrect;
                         }
                     }
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-        // Stocker le score dans la base de données
-        storeUserScore(userScore);  // Stocker le score dans la table user_notes
-
-        // Désactiver le bouton "Soumettre" après la soumission
-        submitButton.setDisable(true);  
+        System.out.println("Score calculé pour la question " + currentQuestionIndex + ": " + userScore);
+    } catch (Exception e) {
+        e.printStackTrace();
     }
 
-    // Fonction pour stocker la note de l'utilisateur dans la table user_notes
+    // Stocker le score calculé pour l'utilisateur
+    storeUserScore(userScore);
+    submitButton.setDisable(true);  // Désactiver le bouton "Soumettre" après la soumission
+}
+    
     private void storeUserScore(int userScore) {
-        // Vérifier que l'ID utilisateur est valide
-        int currentUserId = getCurrentUserId();
-        if (currentUserId <= 0) {
-            System.out.println("Erreur : Aucun utilisateur authentifié.");
+    // Vérifier que l'ID utilisateur est valide
+    int currentUserId = getCurrentUserId();
+    if (currentUserId <= 0) {
+        System.out.println("Erreur : Aucun utilisateur authentifié.");
+        return;
+    }
+
+    try (Connection conn = DatabaseConnection.getConnection()) {
+        if (conn == null) {
+            System.out.println("Erreur : Impossible de se connecter à la base de données.");
             return;
         }
-    
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            if (conn == null) {
-                System.out.println("Erreur : Impossible de se connecter à la base de données.");
-                return;
-            }
-    
-            // Vérifier que l'utilisateur existe dans la table users
-            String checkUserQuery = "SELECT id FROM users WHERE id = ?";
-            PreparedStatement checkUserPstmt = conn.prepareStatement(checkUserQuery);
-            checkUserPstmt.setInt(1, currentUserId);
-            ResultSet rs = checkUserPstmt.executeQuery();
-    
-            if (!rs.next()) {
-                System.out.println("Erreur : L'utilisateur avec l'ID " + currentUserId + " n'existe pas.");
-                return;
-            }
-    
-            // Obtenir l'ID de la matière
-            int matiereId = getMatiereIdAndChrono(selectedMatiere);
-            
-            // Vérifier que l'ID de la matière est valide
-            if (matiereId <= 0) {
-                System.out.println("Erreur : ID de la matière non valide.");
-                return;
-            }
-    
-            // Insérer ou mettre à jour le score de l'utilisateur
-            String query = "INSERT INTO user_notes (user_id, matiere_id, note) VALUES (?, ?, ?) "
-                         + "ON DUPLICATE KEY UPDATE note = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, currentUserId);
-            pstmt.setInt(2, matiereId);
-            pstmt.setInt(3, userScore);
-            pstmt.setInt(4, userScore);
-            pstmt.executeUpdate();
-            System.out.println("Score enregistré avec succès dans user_notes.");
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        // Vérifier que l'utilisateur existe dans la table users
+        String checkUserQuery = "SELECT id FROM users WHERE id = ?";
+        PreparedStatement checkUserPstmt = conn.prepareStatement(checkUserQuery);
+        checkUserPstmt.setInt(1, currentUserId);
+        ResultSet rs = checkUserPstmt.executeQuery();
+
+        if (!rs.next()) {
+            System.out.println("Erreur : L'utilisateur avec l'ID " + currentUserId + " n'existe pas.");
+            return;
         }
+
+        // Obtenir l'ID de la matière
+        int matiereId = getMatiereIdAndChrono(selectedMatiere);
+        
+        // Vérifier que l'ID de la matière est valide
+        if (matiereId <= 0) {
+            System.out.println("Erreur : ID de la matière non valide.");
+            return;
+        }
+
+        // Insérer ou mettre à jour le score de l'utilisateur
+        String query = "INSERT INTO user_notes (user_id, matiere_id, note) VALUES (?, ?, ?) "
+                     + "ON DUPLICATE KEY UPDATE note = note + ?";
+        PreparedStatement pstmt = conn.prepareStatement(query);
+        pstmt.setInt(1, currentUserId);
+        pstmt.setInt(2, matiereId);
+        pstmt.setInt(3, userScore);
+        pstmt.setInt(4, userScore); // Mise à jour du score
+        pstmt.executeUpdate();
+        System.out.println("Score enregistré avec succès dans user_notes.");
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
     
     
     @FXML
